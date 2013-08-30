@@ -1,0 +1,11 @@
+#!/bin/bash
+
+source .config.sh
+
+grep="$1"
+
+if [[ -z "$1" ]]; then
+	ls $DATA_DIR
+else
+	ls $DATA_DIR | grep $grep
+fi
