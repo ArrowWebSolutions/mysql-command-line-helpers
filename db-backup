@@ -1,0 +1,29 @@
+#!/bin/bash
+
+source .config.sh
+
+#The database name to back up is our first param
+db="$1"
+#Then, give it a sensible filename
+filename="$db.sql"
+#And add it to our data dir
+filepath="$DATA_DIR/$filename"
+
+# Check the DB name has been given to us, other wise exit with the usage
+if [ -z "$db" ]; then
+	echo "I need the DB parameter - usage: db-backup db_name"
+	exit 2
+fi
+
+#This command gets all the databases, uses grep to find the matching ones, then does a line count, then removes all spaces
+#Basically, counts the online databases matching the parameter
+db_count=`$MYSQL_CMD -e "SHOW DATABASES" -h $MYSQL_HOST -u $MYSQL_USER -p$MYSQL_PASS | grep -xEe "^$db\$" | wc -l | tr -d ' '`
+
+#Ensure there is a database, if not let them know we can't back it up.
+if [ "$db_count" -lt 1 ]; then
+	echo "I can't find that online database, so I can't back it up."
+	exit 2
+fi
+
+#Finally, dump the database to the data dir
+$MYSQL_DUMP_CMD -h $MYSQL_HOST -u $MYSQL_USER -p$MYSQL_PASS "$db" > "$filepath"
