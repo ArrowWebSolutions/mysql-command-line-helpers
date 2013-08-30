@@ -32,3 +32,7 @@ fi
 if [ -z "$MYSQL_PASS" ]; then
 	MYSQL_PASS=""
 fi
+
+if [ ! -d "$DATA_DIR" ]; then
+	mkdir $DATA_DIR
+fi
