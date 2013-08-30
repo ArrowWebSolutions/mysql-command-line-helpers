@@ -1,0 +1,11 @@
+#!/bin/bash
+
+source .config.sh
+
+grep="$1"
+
+if [[ -z "$1" ]]; then
+	$MYSQL_CMD -e "SHOW DATABASES" -h $MYSQL_HOST -u $MYSQL_USER -p$MYSQL_PASS
+else
+	$MYSQL_CMD -e "SHOW DATABASES" -h $MYSQL_HOST -u $MYSQL_USER -p$MYSQL_PASS | grep $1 
+fi
