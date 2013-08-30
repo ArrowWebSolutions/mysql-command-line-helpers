@@ -2,8 +2,8 @@
 # A config file, it first loads the config.local.sh file to set the variables. It then sets defaults on the variables not set.
 
 # Read the local config.local.sh
-if [ -e "config.local.sh" ]; then
-	source config.local.sh
+if [ -e ".config.local.sh" ]; then
+	source .config.local.sh
 fi
 
 #Ok, lets set the defaults, check to see if they are set, if not then set them.
@@ -29,6 +29,6 @@ if [ -z "$MYSQL_HOST" ]; then
 	MYSQL_HOST="localhost"
 fi
 
-if [-z "$MYSQL_PASS" ]; then
+if [ -z "$MYSQL_PASS" ]; then
 	MYSQL_PASS=""
 fi
