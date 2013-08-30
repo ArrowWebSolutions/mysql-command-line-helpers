@@ -1,9 +1,11 @@
 #!/bin/bash
 # A config file, it first loads the config.local.sh file to set the variables. It then sets defaults on the variables not set.
 
+DIR="$( cd "$( dirname "${BASH_SOURCE[0]}" )" && pwd )"
+
 # Read the local config.local.sh
-if [ -e ".config.local.sh" ]; then
-	source .config.local.sh
+if [ -e "$DIR/.config.local.sh" ]; then
+	source "$DIR/.config.local.sh"
 fi
 
 #Ok, lets set the defaults, check to see if they are set, if not then set them.

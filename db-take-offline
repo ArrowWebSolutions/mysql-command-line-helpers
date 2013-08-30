@@ -2,7 +2,9 @@
 
 #this file is basically db-backup, but with an additional drop
 
-source db-backup
+DIR="$( cd "$( dirname "${BASH_SOURCE[0]}" )" && pwd )"
+
+source "$DIR/db-backup"
 
 if [[ "$BACKUP_COMPLETE" == "Complete" ]]; then
 	$MYSQL_CMD -h $MYSQL_HOST -u $MYSQL_USER -p$MYSQL_PASS -e "DROP DATABASE \`$db\`"
