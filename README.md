@@ -11,7 +11,7 @@ So I wrote some scripts to make it easy to add and remove databases from MySQL. 
 1. Download / clone this repo (I clone this to `~/.mysql-clh`)
 2. Ensure the files all have execute permissions (they should do if cloned)
 3. Add the location of the repo to your PATH (i.e. add `PATH=$PATH:~/.mysql-clh` to your `~/.bash_profile`
-4. Add a `.config.local.sh` file to `~/.mysql-clh` - this file allows you to overwrite some settings. Have a look at (https://gist.github.com/ArronKing/6389807)[https://gist.github.com/ArronKing/6389807] for an example file
+4. Add a `.config.local.sh` file to `~/.mysql-clh` - this file allows you to overwrite some settings. Have a look at https://gist.github.com/ArronKing/6389807 for an example file
 
 ##Settings
 **Put these in your `.config.local.sh` file i.e. `MYSQL_PASS="Arrow"`**
