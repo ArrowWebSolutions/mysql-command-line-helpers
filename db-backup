@@ -27,3 +27,5 @@ fi
 
 #Finally, dump the database to the data dir
 $MYSQL_DUMP_CMD -h $MYSQL_HOST -u $MYSQL_USER -p$MYSQL_PASS "$db" > "$filepath"
+
+BACKUP_COMPLETE="Complete"
