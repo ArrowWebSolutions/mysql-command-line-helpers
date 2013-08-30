@@ -14,6 +14,8 @@ So I wrote some scripts to make it easy to add and remove databases from MySQL. 
 4. Add a `.config.local.sh` file to `~/.mysql-clh` - this file allows you to overwrite some settings
 
 ##Settings
+**Put these in your `.config.local.sh` file i.e. `MYSQL_PASS="Arrow"`**
+
 `MYSQL_CMD` this is the command used to execute mysql **default** `mysql`
 
 `MYSQL_DUMP_CMD` the command used to execute a mysqldump **default** `mysqldump`
