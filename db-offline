@@ -2,9 +2,10 @@
 
 source .config.sh
 
+# read our first param as a grep - to search the offline databases
 grep="$1"
 
-if [[ -z "$1" ]]; then
+if [ -z "$1" ]; then
 	ls $DATA_DIR
 else
 	ls $DATA_DIR | grep $grep
