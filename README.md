@@ -31,4 +31,4 @@ So I wrote some scripts to make it easy to add and remove databases from MySQL. 
 ## What about fish or zsh?
 zsh should be fine.
 
-The easiest thing I can think of is to create some aliases in fish that invoke bash / zsh with the scripts.
+Fish: firstly, follow the setup instructions above and ensure bash works. Then have a look in the fish folder - drop these into your ~/.config/fish/functions/ folder. They just wrap around the bash scripts, fish will invoke bash then return back to fish. 
